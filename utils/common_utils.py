@@ -7,6 +7,15 @@ import numpy as np
 import tensorflow as tf
 
 #####################################################################################
+def dense(x, units, **kwargs):
+  """Identical to tf.layers.dense."""
+  return tf.layers.dense(x, units, **kwargs)
+
+#####################################################################################
+def dropout(input, rate):
+  return tf.nn.dropout(input, 1.0 - rate)
+  
+#####################################################################################
 def assert_rank(tensor, expected_rank, name=None):
     """Raises an exception if the tensor rank is not of the expected rank.
     
